@@ -62,7 +62,16 @@ const HomeNavigator = () => {
                 <HomeStack.Screen 
                   name="Settings" 
                   component={Settings} 
-                  options={{ headerTitle: (props) => <LogoTitle {...props}/>}} />
+                  options={{ 
+                    headerTitle: (props) => <LogoTitle {...props}/>,
+                    headerRight: () => (
+                      <Button
+                        onPress={() => alert('This is a button!')}
+                        title="Info"
+                        color="#fff"
+                      />
+                    ),
+                  }} />
             </HomeStack.Navigator>
       );
 }
