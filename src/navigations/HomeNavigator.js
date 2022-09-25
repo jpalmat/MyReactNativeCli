@@ -1,11 +1,11 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Text, View, Button } from 'react-native';
 
-function Contacts({ navigation }) {
+function Home({ navigation }) {
     return (
       <View style={{ flex: 1, alignItems: 'center', 
       justifyContent: 'center' }}>
-        <Text>Hi from contacts</Text>
+        <Text>Hi from Home</Text>
         <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Settings', {
@@ -40,10 +40,9 @@ function Contacts({ navigation }) {
 const HomeNavigator = () => {
     const HomeStack = createNativeStackNavigator();
     return (
-            <HomeStack.Navigator initialRouteName="Contacts">
-                <HomeStack.Screen name="Home" component={Contacts} />
-                <HomeStack.Screen name="CreateContact" component={CreateContacts} />
-                <HomeStack.Screen name="Settings" component={Settings} />
+            <HomeStack.Navigator initialRouteName="Home">
+                <HomeStack.Screen name="Home" component={Home} options={{title: 'My Home'}} />
+                <HomeStack.Screen name="Settings" component={Settings} options={({route}) => ({title: route.params.otherParam})} />
             </HomeStack.Navigator>
       );
 }
