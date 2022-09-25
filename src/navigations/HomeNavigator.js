@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, Image } from 'react-native';
 
 function Home({ navigation }) {
     return (
@@ -33,11 +33,12 @@ function Home({ navigation }) {
     );
   }
 
-  function CreateContacts() {
+  function LogoTitle() {
     return (
-      <View>
-        <Text>Hi from creat contacts</Text>
-      </View>
+      <Image
+        style={{ width: 50, height: 50 }}
+        source={require('./../assets/images/PizzaSteve.webp')}
+      />
     );
   }
 
@@ -45,7 +46,8 @@ const HomeNavigator = () => {
     const HomeStack = createNativeStackNavigator();
     return (
             <HomeStack.Navigator initialRouteName="Home">
-                <HomeStack.Screen name="Home" 
+                <HomeStack.Screen 
+                  name="Home" 
                   component={Home} 
                   options={{
                     title: 'My Home',
@@ -57,7 +59,10 @@ const HomeNavigator = () => {
                       fontWeight: 'bold',
                     },
                   }} />
-                <HomeStack.Screen name="Settings" component={Settings} options={({route}) => ({title: route.params.otherParam})} />
+                <HomeStack.Screen 
+                  name="Settings" 
+                  component={Settings} 
+                  options={{ headerTitle: (props) => <LogoTitle {...props}/>}} />
             </HomeStack.Navigator>
       );
 }
