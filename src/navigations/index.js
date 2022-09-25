@@ -4,15 +4,14 @@ import {
     StatusBar,
     Text,
   } from 'react-native';
+import HomeNavigator from './HomeNavigator';
+
 
 const AppNavContainer = () => {
     
     return (
         <NavigationContainer>
-            <SafeAreaView>
-                <StatusBar barStyle='dark-content'/>
-                <Text>Hello Worldddd</Text>
-            </SafeAreaView>
+            <HomeNavigator />
         </NavigationContainer>
       );
 }

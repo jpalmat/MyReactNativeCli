@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text, SafeAreaView } from 'react-native';
+import { Text, View } from 'react-native';
 
 function Contacts() {
     return (
