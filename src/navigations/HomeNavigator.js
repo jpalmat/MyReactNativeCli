@@ -1,11 +1,15 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 
-function Contacts() {
+function Contacts({ navigation }) {
     return (
       <View style={{ flex: 1, alignItems: 'center', 
       justifyContent: 'center' }}>
         <Text>Hi from contacts</Text>
+        <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Settings')}
+      />
       </View>
     );
   }
