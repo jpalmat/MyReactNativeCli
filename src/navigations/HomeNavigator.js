@@ -1,11 +1,22 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Text, View, Button, Image } from 'react-native';
+import React from 'react';
 
 function Home({ navigation }) {
+  const [count, setCount] = React.useState(0);
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Button onPress={() => setCount((c) => c + 1)} title="Update count" />
+      ),
+    });
+  }, [navigation]);
+
     return (
       <View style={{ flex: 1, alignItems: 'center', 
       justifyContent: 'center' }}>
         <Text>Hi from Home</Text>
+        <Text>Count: {count}</Text>
         <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Settings', {
@@ -13,6 +24,10 @@ function Home({ navigation }) {
           otherParam: 'pizza',
         })}
       />
+      <Button
+          title="Update the title"
+          onPress={() => navigation.setOptions({ title: 'Updated!' })}
+        />
       </View>
     );
   }
@@ -25,10 +40,6 @@ function Home({ navigation }) {
         <Text>Hi from setting</Text>
         <Text>itemId: {JSON.stringify(itemId)}</Text>
         <Text>otherParam: {JSON.stringify(otherParam)}</Text>
-        <Button
-          title="Update the title"
-          onPress={() => navigation.setOptions({ title: 'Updated!' })}
-        />
       </View>
     );
   }
