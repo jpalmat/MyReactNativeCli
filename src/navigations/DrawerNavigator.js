@@ -1,5 +1,4 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import HomeNavigator from "./HomeNavigator";
 import React from "react";
 
 function CreateContacts() {
@@ -14,9 +13,9 @@ const Drawer = createDrawerNavigator();
 
 function DrawerNavigator() {
     return (
-        <Drawer.Navigator useLegacyImplementation>
+        <Drawer.Navigator>
           <Drawer.Screen name="Home" component={CreateContacts} />
-          </Drawer.Navigator>
+        </Drawer.Navigator>
       );
 }
 

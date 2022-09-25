@@ -1,11 +1,18 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { Text, SafeAreaView, View, StatusBar } from 'react-native';
-import DrawerNavigator from './DrawerNavigator';
+import {
+    SafeAreaView,
+    StatusBar,
+    Text,
+  } from 'react-native';
 
 const AppNavContainer = () => {
+    
     return (
         <NavigationContainer>
-            <DrawerNavigator/>
+            <SafeAreaView>
+                <StatusBar barStyle='dark-content'/>
+                <Text>Hello Worldddd</Text>
+            </SafeAreaView>
         </NavigationContainer>
       );
 }
