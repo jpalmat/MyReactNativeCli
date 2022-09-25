@@ -25,6 +25,10 @@ function Home({ navigation }) {
         <Text>Hi from setting</Text>
         <Text>itemId: {JSON.stringify(itemId)}</Text>
         <Text>otherParam: {JSON.stringify(otherParam)}</Text>
+        <Button
+          title="Update the title"
+          onPress={() => navigation.setOptions({ title: 'Updated!' })}
+        />
       </View>
     );
   }
@@ -41,7 +45,18 @@ const HomeNavigator = () => {
     const HomeStack = createNativeStackNavigator();
     return (
             <HomeStack.Navigator initialRouteName="Home">
-                <HomeStack.Screen name="Home" component={Home} options={{title: 'My Home'}} />
+                <HomeStack.Screen name="Home" 
+                  component={Home} 
+                  options={{
+                    title: 'My Home',
+                    headerStyle: {
+                      backgroundColor: '#f4511e',
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                      fontWeight: 'bold',
+                    },
+                  }} />
                 <HomeStack.Screen name="Settings" component={Settings} options={({route}) => ({title: route.params.otherParam})} />
             </HomeStack.Navigator>
       );
