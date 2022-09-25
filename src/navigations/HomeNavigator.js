@@ -8,8 +8,23 @@ function Contacts({ navigation }) {
         <Text>Hi from contacts</Text>
         <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Settings')}
+        onPress={() => navigation.navigate('Settings', {
+          itemId: 86,
+          otherParam: 'pizza',
+        })}
       />
+      </View>
+    );
+  }
+
+  function Settings({ route, navigation}) {
+    const { itemId, otherParam } = route.params;
+    return (
+      <View style={{ flex: 1, alignItems: 'center', 
+      justifyContent: 'center' }}>
+        <Text>Hi from setting</Text>
+        <Text>itemId: {JSON.stringify(itemId)}</Text>
+        <Text>otherParam: {JSON.stringify(otherParam)}</Text>
       </View>
     );
   }
@@ -18,15 +33,6 @@ function Contacts({ navigation }) {
     return (
       <View>
         <Text>Hi from creat contacts</Text>
-      </View>
-    );
-  }
-
-  function Settings() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', 
-      justifyContent: 'center' }}>
-        <Text>Hi from setting</Text>
       </View>
     );
   }
