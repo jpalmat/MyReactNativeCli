@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text, View, Button, Image } from 'react-native';
+import { Text, View, Button, Image, TouchableWithoutFeedback } from 'react-native';
 import React from 'react';
 
 function Home({ navigation }) {
@@ -19,7 +19,7 @@ function Home({ navigation }) {
         <Text>Count: {count}</Text>
         <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Settings', {
+        onPress={() => navigation.navigate('Details', {
           itemId: 86,
           otherParam: 'pizza',
         })}
@@ -32,14 +32,26 @@ function Home({ navigation }) {
     );
   }
 
-  function Settings({ route, navigation}) {
+  function Details({ route, navigation}) {
     const { itemId, otherParam } = route.params;
     return (
       <View style={{ flex: 1, alignItems: 'center', 
       justifyContent: 'center' }}>
-        <Text>Hi from setting</Text>
-        <Text>itemId: {JSON.stringify(itemId)}</Text>
-        <Text>otherParam: {JSON.stringify(otherParam)}</Text>
+        <Text>Hi from details</Text>
+        {/* <Text>itemId: {JSON.stringify(itemId)}</Text>
+        <Text>otherParam: {JSON.stringify(otherParam)}</Text> */}
+        <Text onPress={() => console.log('test')}>Hello Worldddd</Text>
+                <TouchableWithoutFeedback onPress={() => console.log("test2")}>
+                {/* <TouchableOpacity> */}
+                    <Image 
+                    source={{
+                        width: 200,
+                        height: 300,
+                        uri: "https://picsum.photos/200/300"
+                    }}
+                    />
+                </TouchableWithoutFeedback>
+                {/* </TouchableOpacity> */}
       </View>
     );
   }
@@ -71,8 +83,8 @@ const HomeNavigator = () => {
                     },
                   }} />
                 <HomeStack.Screen 
-                  name="Settings" 
-                  component={Settings} 
+                  name="Details" 
+                  component={Details} 
                   options={{ 
                     headerTitle: (props) => <LogoTitle {...props}/>,
                     headerRight: () => (
