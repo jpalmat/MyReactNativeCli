@@ -37,11 +37,10 @@ function Home({ navigation }) {
     return (
       <View style={{ flex: 1, alignItems: 'center', 
       justifyContent: 'center' }}>
-        <Text>Hi from details</Text>
+        <Text onPress={() => alert('test')}>Hi from details</Text>
         {/* <Text>itemId: {JSON.stringify(itemId)}</Text>
         <Text>otherParam: {JSON.stringify(otherParam)}</Text> */}
-        <Text onPress={() => console.log('test')}>Hello Worldddd</Text>
-                <TouchableWithoutFeedback onPress={() => console.log("test2")}>
+                <TouchableWithoutFeedback onPress={() => alert("test2")}>
                 {/* <TouchableOpacity> */}
                     <Image 
                     source={{
