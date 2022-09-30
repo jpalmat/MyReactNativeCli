@@ -5,12 +5,13 @@ import {
     Text,
   } from 'react-native';
 import HomeNavigator from './HomeNavigator';
+import ViewImageScreen from './ViewImageScreen';
 
 const AppNavContainer = () => {
     
     return (
         <NavigationContainer>
-            <HomeNavigator/>
+            <ViewImageScreen/>
         </NavigationContainer>
       );
 }
