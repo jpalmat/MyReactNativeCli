@@ -42,6 +42,8 @@ function Home({ navigation }) {
           {text: "Yes", onPress: () => alert('yes was clicked')},
           {text: "No", onPress: () => alert('no was clicked')}
         ])}>Hi from details</Text>
+        {/* only ios */}
+        {/* <Text onPress={() => Alert.prompt("My title", "My message", text => alert(text))}>Hi from details1</Text> */}
         {/* <Text>itemId: {JSON.stringify(itemId)}</Text>
         <Text>otherParam: {JSON.stringify(otherParam)}</Text> */}
                 <TouchableWithoutFeedback onPress={() => alert("test2")}>
