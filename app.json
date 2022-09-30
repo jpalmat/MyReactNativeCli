@@ -1,4 +1,5 @@
 {
   "name": "MyReactNativeCli",
-  "displayName": "MyReactNativeCli"
+  "displayName": "MyReactNativeCli",
+  "orientation": "portrait"
 }

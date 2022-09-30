@@ -1,6 +1,18 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text, View, Button, Image, TouchableWithoutFeedback, Alert } from 'react-native';
+import { 
+  Text, 
+  View, 
+  Button, 
+  Image, 
+  TouchableWithoutFeedback, 
+  Alert,
+  Platform,
+  Dimensions
+ } from 'react-native';
 import React from 'react';
+import { SafeAreaView } from "react-native-safe-area-context";
+
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks'
 
 function Home({ navigation }) {
   const [count, setCount] = React.useState(0);
@@ -33,31 +45,39 @@ function Home({ navigation }) {
   }
 
   function Details({ route, navigation}) {
+    console.log(useDeviceOrientation())
+    const { landscape } = useDeviceOrientation();
     const { itemId, otherParam } = route.params;
     return (
-      <View style={{ flex: 1, alignItems: 'center', 
-      justifyContent: 'center' }}>
-        {/* <Text onPress={() => alert('test')}>Hi from details</Text> */}
-        <Text onPress={() => Alert.alert("My title", "My message", [
-          {text: "Yes", onPress: () => alert('yes was clicked')},
-          {text: "No", onPress: () => alert('no was clicked')}
-        ])}>Hi from details</Text>
-        {/* only ios */}
-        {/* <Text onPress={() => Alert.prompt("My title", "My message", text => alert(text))}>Hi from details1</Text> */}
-        {/* <Text>itemId: {JSON.stringify(itemId)}</Text>
-        <Text>otherParam: {JSON.stringify(otherParam)}</Text> */}
-                <TouchableWithoutFeedback onPress={() => alert("test2")}>
-                {/* <TouchableOpacity> */}
-                    <Image 
-                    source={{
-                        width: 200,
-                        height: 300,
-                        uri: "https://picsum.photos/200/300"
-                    }}
-                    />
-                </TouchableWithoutFeedback>
-                {/* </TouchableOpacity> */}
-      </View>
+      <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'flex-start'}}>
+        <View>
+          {/* <Text onPress={() => alert('test')}>Hi from details</Text> */}
+          <Text onPress={() => Alert.alert("My title", "My message", [
+            {text: "Yes", onPress: () => alert('yes was clicked')},
+            {text: "No", onPress: () => alert('no was clicked')}
+          ])}>Hi from details</Text>
+          {/* only ios */}
+          {/* <Text onPress={() => Alert.prompt("My title", "My message", text => alert(text))}>Hi from details1</Text> */}
+          {/* <Text>itemId: {JSON.stringify(itemId)}</Text>
+          <Text>otherParam: {JSON.stringify(otherParam)}</Text> */}
+                  <TouchableWithoutFeedback onPress={() => alert(Dimensions.get('screen'))}>
+                  {/* <TouchableOpacity> */}
+                      <Image 
+                      source={{
+                          width: 200,
+                          height: 300,
+                          uri: "https://picsum.photos/200/300"
+                      }}
+                      />
+                  </TouchableWithoutFeedback>
+                  {/* </TouchableOpacity> */}
+        </View>
+        <View style={{
+          backgroundColor: "blue",
+          width: landscape ? "10%" : "50%",
+          height: landscape ? "100%" : "30%"
+        }}></View>
+      </SafeAreaView>
     );
   }
 
