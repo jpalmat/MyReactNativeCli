@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Text, View, Button, Image, TouchableWithoutFeedback } from 'react-native';
+import { Text, View, Button, Image, TouchableWithoutFeedback, Alert } from 'react-native';
 import React from 'react';
 
 function Home({ navigation }) {
@@ -37,7 +37,11 @@ function Home({ navigation }) {
     return (
       <View style={{ flex: 1, alignItems: 'center', 
       justifyContent: 'center' }}>
-        <Text onPress={() => alert('test')}>Hi from details</Text>
+        {/* <Text onPress={() => alert('test')}>Hi from details</Text> */}
+        <Text onPress={() => Alert.alert("My title", "My message", [
+          {text: "Yes", onPress: () => alert('yes was clicked')},
+          {text: "No", onPress: () => alert('no was clicked')}
+        ])}>Hi from details</Text>
         {/* <Text>itemId: {JSON.stringify(itemId)}</Text>
         <Text>otherParam: {JSON.stringify(otherParam)}</Text> */}
                 <TouchableWithoutFeedback onPress={() => alert("test2")}>
