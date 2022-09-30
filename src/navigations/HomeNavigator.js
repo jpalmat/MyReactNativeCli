@@ -49,7 +49,7 @@ function Home({ navigation }) {
     const { landscape } = useDeviceOrientation();
     const { itemId, otherParam } = route.params;
     return (
-      <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'flex-start'}}>
+      <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'space-between'}}>
         <View>
           {/* <Text onPress={() => alert('test')}>Hi from details</Text> */}
           <Text onPress={() => Alert.alert("My title", "My message", [
@@ -76,9 +76,21 @@ function Home({ navigation }) {
           backgroundColor: "blue",
           width: landscape ? "10%" : "50%",
           height: landscape ? "100%" : "30%"
-        }}></View>
+        }}>
+          <Button 
+            title="Go to next"
+            onPress={() => navigation.navigate("Flexscreen")}/>
+        </View>
       </SafeAreaView>
     );
+  }
+
+  function Flexscreen() {
+    return (
+      <View>
+        <Text>test</Text>
+      </View>
+    )
   }
 
   function LogoTitle() {
@@ -120,6 +132,9 @@ const HomeNavigator = () => {
                       />
                     ),
                   }} />
+                <HomeStack.Screen 
+                  name="Flexscreen"
+                  component={Flexscreen}/>
             </HomeStack.Navigator>
       );
 }
