@@ -5,7 +5,11 @@ function CustomButton(props) {
     return (
         <Pressable 
             onPress={props.onPress}
-            style={[styles.container, styles[`container_${props.type}`]]}>
+            style={[
+                styles.container, 
+                styles[`container_${props.type}`],
+                props.bgColor ? {backgroundColor: props.bgColor} : {}
+            ]}>
             <Text style={styles.text}>{props.buttonText}</Text>
         </Pressable>
     );
