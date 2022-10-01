@@ -7,20 +7,11 @@
  */
 import 'react-native-gesture-handler';
 import React from 'react';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import SignInScreen from './src/screens/SignInScreen';
-import SignUpScreen from './src/screens/SignUpScreen';
+import AppNavContainer from './src/navigations';
 
 const App = () => {
   return (
-    <SignUpScreen />
+    <AppNavContainer />
   );
 };
 

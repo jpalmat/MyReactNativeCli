@@ -10,15 +10,20 @@ import {
 import CustomButton from '../components/CustomButton';
 import CustomInput from '../components/CustomInput';
 
-function SignInScreen(props) {
+import { useNavigation } from '@react-navigation/native'
+
+const SignInScreen = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
+    const { height } = useWindowDimensions();
+    const navigation = useNavigation();
+
     const onSignIsPressed = () => {
-        alert('button pressed')
+        navigation.navigate('SignUpScreen');
     }
 
-    const { height } = useWindowDimensions()
+    
     return (
         <SafeAreaView style={styles.container}>
             <Image

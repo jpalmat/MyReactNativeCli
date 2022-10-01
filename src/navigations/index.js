@@ -1,18 +1,19 @@
 import { NavigationContainer } from '@react-navigation/native';
-import {
-    SafeAreaView,
-    StatusBar,
-    Text,
-  } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SignInScreen from '../screens/SignInScreen';
+import SignUpScreen from '../screens/SignUpScreen';
+
+  const Stack = createNativeStackNavigator()
 
 const AppNavContainer = () => {
-    
+
     return (
         <NavigationContainer>
-            <SafeAreaView>
-                <StatusBar barStyle='dark-content'/>
-                <Text>Hello Worldddd</Text>
-            </SafeAreaView>
+            {/* screenOptions={{headerShown: false}} */}
+            <Stack.Navigator >
+                <Stack.Screen name="SignInScreen" component={SignInScreen} />
+                <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
+            </Stack.Navigator>
         </NavigationContainer>
       );
 }

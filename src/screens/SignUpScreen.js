@@ -10,7 +10,7 @@ import {
 import CustomButton from '../components/CustomButton';
 import CustomInput from '../components/CustomInput';
 
-function SignUpScreen(props) {
+const SignUpScreen = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
