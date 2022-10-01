@@ -36,7 +36,14 @@ function SignInScreen(props) {
                 setValue={setPassword}
                 security={true}/>
 
-            <CustomButton buttonText="Log in" onPress={onSignIsPressed}/>
+            <CustomButton 
+                buttonText="Log in" 
+                onPress={onSignIsPressed}
+                type="PRIMARY"/>
+            <CustomButton 
+                buttonText="Forget Password" 
+                onPress={onSignIsPressed}
+                type="TERTIARY"/>
         </SafeAreaView>
     );
 }

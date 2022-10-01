@@ -5,7 +5,7 @@ function CustomButton(props) {
     return (
         <Pressable 
             onPress={props.onPress}
-            style={styles.container}>
+            style={[styles.container, styles[`container_${props.type}`]]}>
             <Text style={styles.text}>{props.buttonText}</Text>
         </Pressable>
     );
@@ -13,16 +13,23 @@ function CustomButton(props) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'blue',
         width: '100%',
         padding:15,
         marginVertical: 5,
         alignItems: 'center',
         borderRadius: 5
     },
+    container_PRIMARY: {
+        backgroundColor: 'blue',
+    },
+    container_TERTIARY: {
+    },
     text: {
         fontWeight: 'bold',
         color: 'white'
+    },
+    text_TERTAIRY: {
+        color: 'grey'
     }
 })
 
