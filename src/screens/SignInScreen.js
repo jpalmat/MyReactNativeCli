@@ -7,6 +7,7 @@ import {
     StyleSheet,
     useWindowDimensions
  } from 'react-native';
+import CustomButton from '../components/CustomButton';
 import CustomInput from '../components/CustomInput';
 
 function SignInScreen(props) {
@@ -30,6 +31,8 @@ function SignInScreen(props) {
                 value={password} 
                 setValue={setPassword}
                 security={true}/>
+
+            <CustomButton/>
         </SafeAreaView>
     );
 }
