@@ -5,8 +5,12 @@ function CustomInput(props) {
     return (
         <View style={styles.container}>
             <TextInput
+                value={props.value}
+                onChangeText={props.setValue}
+                placeholder={props.placeholder}
+                secureTextEntry={props.security}
                 style={styles.input}
-                placeholder="hint" />
+            />
         </View>
     );
 }

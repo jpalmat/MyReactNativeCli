@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { 
     Image, 
     SafeAreaView, 
@@ -10,6 +10,9 @@ import {
 import CustomInput from '../components/CustomInput';
 
 function SignInScreen(props) {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
     const { height } = useWindowDimensions()
     return (
         <SafeAreaView style={styles.container}>
@@ -18,8 +21,15 @@ function SignInScreen(props) {
                 source={require("../assets/images/onStar.jpeg")}
                 resizeMode="contain"
             />
-            <CustomInput/>
-            <CustomInput/>
+            <CustomInput 
+                placeholder="Username" 
+                value={username} 
+                setValue={setUsername}/>
+            <CustomInput
+                placeholder="Password" 
+                value={password} 
+                setValue={setPassword}
+                security={true}/>
         </SafeAreaView>
     );
 }
