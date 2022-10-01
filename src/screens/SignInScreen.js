@@ -14,6 +14,10 @@ function SignInScreen(props) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
+    const onSignIsPressed = () => {
+        alert('button pressed')
+    }
+
     const { height } = useWindowDimensions()
     return (
         <SafeAreaView style={styles.container}>
@@ -32,7 +36,7 @@ function SignInScreen(props) {
                 setValue={setPassword}
                 security={true}/>
 
-            <CustomButton/>
+            <CustomButton buttonText="Log in" onPress={onSignIsPressed}/>
         </SafeAreaView>
     );
 }

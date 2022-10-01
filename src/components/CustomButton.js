@@ -1,11 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Pressable } from 'react-native';
 
 function CustomButton(props) {
     return (
-        <View style={styles.container}>
-            <Text style={styles.text}>test</Text>
-        </View>
+        <Pressable 
+            onPress={props.onPress}
+            style={styles.container}>
+            <Text style={styles.text}>{props.buttonText}</Text>
+        </Pressable>
     );
 }
 
