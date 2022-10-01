@@ -19,6 +19,7 @@ function SignInScreen(props) {
                 resizeMode="contain"
             />
             <CustomInput/>
+            <CustomInput/>
         </SafeAreaView>
     );
 }
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         flex: 1,
-        backgroundColor: 'black'
+        backgroundColor: 'black',
         
     },
     image: {
