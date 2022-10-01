@@ -15,11 +15,12 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import SignInScreen from './src/screens';
+import SignInScreen from './src/screens/SignInScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
 
 const App = () => {
   return (
-    <SignInScreen />
+    <SignUpScreen />
   );
 };
 
