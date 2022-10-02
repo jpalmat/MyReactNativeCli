@@ -16,9 +16,9 @@
 
 #import <react/config/ReactNativeConfig.h>
 
-@import GoogleMaps;
+#import <GoogleMaps/GoogleMaps.h>
 
-[GMSServices provideAPIKey:@"AIzaSyCiEYoAWwvIkDpCCo0561ozdX_Z6YEWf2g"]
+[GMSServices provideAPIKey:@"AIzaSyCiEYoAWwvIkDpCCo0561ozdX_Z6YEWf2g"]; 
 
 static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
@@ -35,6 +35,7 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  
   RCTAppSetupPrepareApp(application);
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];

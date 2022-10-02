@@ -6,6 +6,7 @@ function Location(props) {
     return (
         <View style={styles.container}>
             <MapView style={styles.maps} />
+            <Text>Test</Text>
         </View>
     );
 }
