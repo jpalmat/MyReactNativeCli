@@ -8,10 +8,11 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import AppNavContainer from './src/navigations';
+import Location from './src/screens/Location';
 
 const App = () => {
   return (
-    <AppNavContainer />
+    <Location />
   );
 };
 

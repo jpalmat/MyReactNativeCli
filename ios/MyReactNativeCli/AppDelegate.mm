@@ -16,6 +16,10 @@
 
 #import <react/config/ReactNativeConfig.h>
 
+@import GoogleMaps;
+
+[GMSServices provideAPIKey:@"AIzaSyCiEYoAWwvIkDpCCo0561ozdX_Z6YEWf2g"]
+
 static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 @interface AppDelegate () <RCTCxxBridgeDelegate, RCTTurboModuleManagerDelegate> {
